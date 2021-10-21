@@ -14,10 +14,14 @@ public class VisitorRespository implements PanacheRepository<Visitor> {
     }
 
     @Transactional
-    public void addVisitor(Visitor vs)
+    public boolean addVisitor(Visitor vs)
     {
-        if(!isPersistent(vs))
+        if(!isPersistent(vs)) {
             persistAndFlush(vs); // Um das Speichern des neuen Eintrags gleich nachdem Einfügen auszuführen.
+            return true;
+        }
+
+        return false;
     }
 
     public Visitor getVisitorById(Long id) {
