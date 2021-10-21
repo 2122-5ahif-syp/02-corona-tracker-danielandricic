@@ -3,10 +3,12 @@ package at.htl.repository;
 import at.htl.entity.Visitor;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;
 import java.util.Collections;
 import java.util.List;
 
+@ApplicationScoped
 public class VisitorRespository implements PanacheRepository<Visitor> {
 
     public VisitorRespository() {

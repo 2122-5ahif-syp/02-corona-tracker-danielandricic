@@ -19,10 +19,10 @@ public class VisitorResource {
     @POST
     @Path("/add")
     public Response addVisitor(
-            @FormParam("firstname") String firstname,
-            @FormParam("lastname") String lastname,
+            @FormParam("firstName") String firstname,
+            @FormParam("lastName") String lastname,
             @FormParam("email") String email,
-            @FormParam("phoneNumber") String phoneNumber
+            @FormParam("phone") String phoneNumber
     ) {
         var vs = new Visitor(firstname, lastname, email, phoneNumber);
         if(repo.addVisitor(vs))
